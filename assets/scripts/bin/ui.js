@@ -1,5 +1,7 @@
+const bookstemplate = require('../templates/book-listing')
 
-const success = function () {
+const success = function (data) {
+  const bookshtml = bookstemplate({ 'books' : data.books})
 
 }
 
