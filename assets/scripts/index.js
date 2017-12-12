@@ -6,7 +6,7 @@ const events = require('./bin/events')
 
 $(() => {
   setAPIOrigin(location, config)
-  $('.got-books').on('click', events.OngetBooks)
+
 })
 
 // use require with a reference to bundle the file and use it in this file
