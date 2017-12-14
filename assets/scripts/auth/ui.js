@@ -73,8 +73,6 @@ const signOutSuccess = function (data) {
   $('.auth-menu').addClass('hidden')
   store.user = false
   showModal('sign-in')
-  $('#message').html('Signed out successfully')
-  // $('.modal').modal('hide')
 }
 
 const signOutFail = function () {
