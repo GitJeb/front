@@ -19,6 +19,7 @@
               <div>
                 <img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px>
                 This is the Header
+                <p id="message">This is where ui messages will appear for now!</p>
               </div>
 
                   <!-- Modal for displaying authorization forms -->
@@ -69,11 +70,11 @@
                       </div>
                     </div>
                   </div>
-            </header>
 
 
 
-              <div id="navigation">
+
+
                 <!-- Navbar -->
                 <nav class="navbar navbar-default">
                   <div class="container-fluid">
@@ -106,14 +107,54 @@
                     </ul>
                   </div>
                 </nav>
-              </div>
+
+      </header>
+    <div id="navigation">        </div>
+
+
+
 
               <div id="leftcolumn">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
                   porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
               </div>
+
+
+              <!-- MAIN SECTION OF SITE -->
               <div class="section">
+                <br>
+                <br>
                 Something Something Something
+                <br><br>
+                <form id="application-x-www-form-data" action="http://httpbin.org/post" method="post">
+                  <fieldset>
+                    <legend>enctype unset</legend>
+                    <label>
+                      Title
+                      <input type="text" name="image[title]">
+                    </label>
+                    <label>
+                      Image
+                      <input type="file" name="image[file]">
+                    </label>
+                    <input type="submit" name="submit" value="Upload">
+                  </fieldset>
+                </form>
+                <br>
+                <form id="multipart-form-data" enctype="multipart/form-data">
+                  <fieldset>
+                    <legend>enctype="multipart/form-data"</legend>
+                    <label>
+                      Title
+                      <input type="text" name="image[title]">
+                    </label>
+                    <label>
+                      Image
+                      <input type="file" name="image[file]">
+                    </label>
+                    <input type="submit" name="submit" value="Upload">
+                  </fieldset>
+                </form>
               </div>
               <div id="footer">
                 <p>This is the Footer</p>
