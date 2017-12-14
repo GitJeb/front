@@ -6,6 +6,16 @@ const clearForms = function () {
   $('input').val('')
 }
 
+const errorHandle = function (message) {
+  $('.error').html(message)
+}
+
+// Auth Modal Form Error
+const showError = function (msg) {
+  $('.formerror-auth').html(msg)
+  $('.formerror-auth').removeClass('hidden')
+}
+
 // Auth Modal Controls
 const showModal = function (buttonId) {
   // Class of forms map to id of buttons to disiplay them.
@@ -32,11 +42,12 @@ const showModal = function (buttonId) {
 const signUpSuccess = function (data) {
   $('#message').html('Signed up successfully. Now please sign in.')
   clearForms()
+  showModal('sign-in')
 }
 
 const signUpFail = function () {
-  $('#message').html('Error on sign up. Please try again.')
   clearForms()
+  showError('Error Signing Up')
 }
 
 const signInSuccess = function (data) {
@@ -53,7 +64,7 @@ const signInSuccess = function (data) {
 
 const signInFail = function () {
   clearForms()
-  $('#message').html('Error on sign in. Please try again.')
+  showError('Error Signing In')
 }
 
 const signOutSuccess = function (data) {
@@ -79,7 +90,7 @@ const changePassSuccess = function () {
 
 const changePassFail = function () {
   clearForms()
-  $('#message').html('Error on change password. Please try again.')
+  showError('Error Changing Password')
 }
 
 module.exports = {
@@ -91,5 +102,7 @@ module.exports = {
   signOutSuccess,
   signOutFail,
   changePassSuccess,
-  changePassFail
+  changePassFail,
+  errorHandle,
+  showError
 }
