@@ -4,6 +4,8 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./auth/events')
 
+const uploadEvents = require('./uploads/events')
+
 $(() => {
   setAPIOrigin(location, config)
   // Register Authorization Events
@@ -14,6 +16,8 @@ $(() => {
 
   // Register Event to Show Form Modal
   $('.auth-modal').on('click', events.onModal)
+  setAPIOrigin(location, config)
+  $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
 })
 
 // use require with a reference to bundle the file and use it in this file
