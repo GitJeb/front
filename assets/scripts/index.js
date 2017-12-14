@@ -6,7 +6,14 @@ const events = require('./bin/events')
 
 $(() => {
   setAPIOrigin(location, config)
-  $('.got-books').on('click', events.OngetBooks)
+  // Register Authorization Events
+  $('.registration').on('submit', events.onRegistration)
+  $('.sign-in').on('submit', events.onSignIn)
+  $('.change-password').on('submit', events.onChangePassword)
+  $('.signout').on('click', events.onSignout)
+
+  // Register Event to Show Form Modal
+  $('.auth-modal').on('click', events.onModal)
 })
 
 // use require with a reference to bundle the file and use it in this file
