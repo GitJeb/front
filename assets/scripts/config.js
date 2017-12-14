@@ -2,8 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://wdi-library.herokuapp.com',
-    development: 'https://wdi-library.herokuapp.com'
+    production: 'https://dry-wildwood-27227.herokuapp.com/',
+    development: 'http://localhost:4741'
   }
 }
 

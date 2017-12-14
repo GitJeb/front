@@ -12,6 +12,7 @@ const onModal = (event) => {
 // Register
 const onRegistration = function (event) {
   event.preventDefault()
+  console.log('hey i work')
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
@@ -37,11 +38,11 @@ const onChangePassword = function (event) {
 }
 
 // Sign Out
-const onSignout = function (event) {
+const onSignOut = function (event) {
   event.preventDefault()
-  api.signout()
-    .then(ui.signoutSuccess)
-    .catch(ui.signoutFail)
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFail)
 }
 
 module.exports = {
@@ -49,5 +50,5 @@ module.exports = {
   onRegistration,
   onSignIn,
   onChangePassword,
-  onSignout
+  onSignOut
 }
