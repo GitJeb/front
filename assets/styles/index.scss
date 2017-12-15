@@ -5,21 +5,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
-    color:#333
+    color: #333;
+    margin: 0 auto;
+    width: 1000px;
 }
 
 p {
     padding: 10px;
 }
 
-#wrapper {
-    margin: 0 auto;
-    width: 1000px;
-}
-
-#header {
-    height: 75px;
-    width: 1000px;
+.upload {
+    height: 100px;
+    width: 100%;
     background: #00EEFF;
 }
 
@@ -37,17 +34,25 @@ p {
 section {
     float: left;
     background: #FFFFFF;
-    width: 700px;
+    width: 100%;
     padding-top: 200px;
+}
+
+.showzAll {
+  float: left;
+}
+
+.photo-grid {
+  float: left;
 }
 
 #message {
   float: right;
 }
 
-#leftcolumn {
+#main {
     background: #FF0000;
-    width: 300px;
+    width: 100%;
     float: left;
 }
 

@@ -12,10 +12,9 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
-
 const indexAllSuccess = function (data) {
   console.log(data)
-  $('body').html(indexView({uploads: data.uploads}))
+  $('#photo-grid').html(indexView({uploads: data.uploads}))
 }
 
 const indexAllFail = function (error) {
