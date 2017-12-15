@@ -14,7 +14,8 @@ const error = function (error) {
 
 
 const indexAllSuccess = function (data) {
-  $('#footer').html(indexView({stores: data.uploads}))
+  console.log(data)
+  $('body').html(indexView({uploads: data.uploads}))
 }
 
 const indexAllFail = function (error) {
