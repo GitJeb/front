@@ -1,8 +1,12 @@
 'use strict'
+const store = require('../store')
 
 const createMulti = function (data) {
   return $.ajax({
     url: 'http://localhost:4741/uploads',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
     method: 'POST',
     data,
     contentType: false,

@@ -12,7 +12,6 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
-
 const indexAllSuccess = function (data) {
   console.log(data)
   $('body').html(indexView({uploads: data.uploads}))
