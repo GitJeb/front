@@ -6,7 +6,6 @@ const store = require('../store')
 
 const createMulti = function (data) {
   return $.ajax({
-    // hey dudes shouldn't this be
     url: config.apiOrigin,
     method: 'POST',
     data,
