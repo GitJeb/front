@@ -13,19 +13,23 @@
     </head>
 
 
+    <!-- Full Body Div -->
+    <body class="container-fluid" id="wrapper">
 
-        <body class="container-fluid" id="wrapper">
-            <header>
-              <div>
-                <img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px>
-                This is the Header
-                <p id="message">This is where ui messages will appear for now!</p>
-              </div>
+          <!-- Logo and Modal -->
+          <header>
+
+                <!-- logo -->
+                <div class="logo">
+                  <img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px>
+                  <p id="message">This is where ui messages will appear for now!</p>
+                </div>
 
                   <!-- Modal for displaying authorization forms -->
-                  <div class="modal fade auth">
+                <div class="modal fade auth">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
+
                         <div class="modal-header">
                             <h3 class="modal-title modal-title-auth"></h3>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -35,42 +39,43 @@
 
                         <div class="modal-body">
 
-                    <form class='registration'>
-                      <label for="RegEmail">Email address</label>
-                      <input id='RegEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
-                      <label for="RegPass1">Password</label>
-                      <input id='RegPass1' class='form-control' name="credentials[password]" type="password" placeholder="password">
-                      <label for="RegPass2">Confirm Password</label>
-                      <input id="RegPass2" class='form-control' name="credentials[password_confirmation]" type="password" placeholder="re-enter password">
-                      <button class='submit btn btn-primary' type='submit'>Sign Up</button>
-                    </form>
+                          <form class='registration'>
+                              <label for="RegEmail">Email address</label>
+                              <input id='RegEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
+                              <label for="RegPass1">Password</label>
+                              <input id='RegPass1' class='form-control' name="credentials[password]" type="password" placeholder="password">
+                              <label for="RegPass2">Confirm Password</label>
+                              <input id="RegPass2" class='form-control' name="credentials[password_confirmation]" type="password" placeholder="re-enter password">
+                              <button class='submit btn btn-primary' type='submit'>Sign Up</button>
+                            </form>
 
-                    <form class='sign-in'>
-                      <label for='LogEmail'>Email address</label>
-                      <input id='LogEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
-                      <label for='LogPass'>Password</label>
-                      <input id='LogPass' class='form-control' name="credentials[password]" type='password' placeholder="password">
-                      <button class='btn btn-primary' type='submit'>Sign In</button>
-                      <button id='registration' type='button' class='modal-display auth-modal nav-item btn btn-primary'>Sign Up</button>
-                    </form>
+                          <form class='sign-in'>
+                              <label for='LogEmail'>Email address</label>
+                              <input id='LogEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
+                              <label for='LogPass'>Password</label>
+                              <input id='LogPass' class='form-control' name="credentials[password]" type='password' placeholder="password">
+                              <button class='btn btn-primary' type='submit'>Sign In</button>
+                              <button id='registration' type='button' class='modal-display auth-modal nav-item btn btn-primary'>Sign Up</button>
+                            </form>
 
-                    <form class='change-password'>
-                      <label for='oldPass'>Current Password</label>
-                      <input id='oldPass' class='form-control' name="passwords[old]" type='password' placeholder="old password">
-                      <label for='newPass'>New Password</label>
-                      <input id='newPass' name="passwords[new]" class='form-control' type='password' placeholder="new password">
-                      <button class='btn btn-primary changepass' id='change-pass-btn' type='submit'>Submit</button>
-                    </form>
+                          <form class='change-password'>
+                              <label for='oldPass'>Current Password</label>
+                              <input id='oldPass' class='form-control' name="passwords[old]" type='password' placeholder="old password">
+                              <label for='newPass'>New Password</label>
+                              <input id='newPass' name="passwords[new]" class='form-control' type='password' placeholder="new password">
+                              <button class='btn btn-primary changepass' id='change-pass-btn' type='submit'>Submit</button>
+                            </form>
 
-                    <div class='formerror formerror-auth alert alert-danger' role="alert"></div>
-                  </div>
+                          <div class='formerror formerror-auth alert alert-danger' role="alert"></div>
+
+                    </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                      </div>
                       </div>
                     </div>
-                  </div>
-
+                </div>
 
                 <!-- Navbar -->
                 <nav class="navbar navbar-default">
@@ -105,9 +110,12 @@
                   </div>
                 </nav>
 
-      </header>
-    <div class="upload">
-      <form id="multipart-form-data" enctype="multipart/form-data">
+          </header>
+
+          <!-- user upload picture section -->
+          <div class="upload">
+
+                <form id="multipart-form-data" enctype="multipart/form-data">
                       <fieldset>
                         <h3>Upload your picture here!</h3>
                         <label>
@@ -120,35 +128,32 @@
                         </label>
                         <button type="submit" name="submit">Upload</button>
                       </fieldset>
-                    </form>
-                    <br>
-                  </div>
+                </form>
+          </div>
 
+            </div>
 
-
-
-              <div id="leftcolumn">
+          <!-- main section -->
+          <div id="main">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
                   porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
-              </div>
+                  <div class="showzAll">
+                      <br>
+                      <br>
+                      Something Something Something
+                      <br><br>
+                      <div></div>
+                      <legend>SHOW ALL BUTTON</legend>
+                      <button class="btn btn-primary showIndex">SHOW ALL</button>
+                  </div>
+                <div id="photo-grid"></div>
+          </div>
 
 
-              <!-- MAIN SECTION OF SITE -->
-              <div class="section">
-                <br>
-                <br>
-                Something Something Something
-                <br><br>
-
-                                  <legend>SHOW ALL BUTTON</legend>
-                                  <button class="btn btn-primary showIndex" >SHOW ALL</button>
-
-              </div>
-              <div id="footer">
+          <!-- footer -->
+          <div id="footer">
                 <p>This is the Footer</p>
-              </div>
-
-
+          </div>
 
     </body>
     </html>

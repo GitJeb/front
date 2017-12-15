@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://dry-wildwood-27227.herokuapp.com/',
+    production: 'https://dry-wildwood-27227.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
