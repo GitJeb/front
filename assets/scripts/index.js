@@ -16,8 +16,10 @@ $(() => {
 
   // Register Event to Show Form Modal
   $('.auth-modal').on('click', events.onModal)
-  setAPIOrigin(location, config)
+
+  // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
+  $('.showIndex').on('click', uploadEvents.onShowIndex)
 })
 
 // use require with a reference to bundle the file and use it in this file
