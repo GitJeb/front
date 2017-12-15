@@ -14,16 +14,41 @@ const error = function (error) {
 
 const indexAllSuccess = function (data) {
   console.log(data)
-  $('#photo-grid').html(indexView({uploads: data.uploads}))
+  $('photo-grid').html(indexView({uploads: data.uploads}))
 }
 
 const indexAllFail = function (error) {
+  $('#message').html('error')
   console.log('indexAll error:', error)
+}
+
+const deleteUploadSuccess = function (data) {
+  console.log('success data is:', data)
+  $('#message').html('upload successfully deleted!')
+}
+
+const deleteUploadFail = function (error) {
+  $('#message').html('error on delete')
+  console.log('upload delete error:', error)
+}
+
+const updateUploadSuccess = function (data) {
+  console.log('success data is:', data)
+  $('#message').html('upload successfully updated!')
+}
+
+const updateUploadFail = function (error) {
+  $('#message').html('error on update')
+  console.log('upload update error:', error)
 }
 
 module.exports = {
   success,
   error,
   indexAllSuccess,
-  indexAllFail
+  indexAllFail,
+  deleteUploadSuccess,
+  deleteUploadFail,
+  updateUploadSuccess,
+  updateUploadFail
 }

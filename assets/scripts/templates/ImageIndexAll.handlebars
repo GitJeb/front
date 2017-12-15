@@ -1,7 +1,13 @@
 <h1> All Images </h1>
 
 {{#each uploads as | upload |}}
+<div>
 <h4> {{upload.title}} </h4>
 <p> created: {{upload.updatedAt}}</p>
 <img src= {{upload.url}} alt='image not found'>
+<div class="upload-buttons">
+<button id="{{upload.id}}" class="delete-upload">Delete</button>
+<button id="{{upload.id}}" class="update-upload">Update</button>
+</div>
+</div>
 {{/each}}

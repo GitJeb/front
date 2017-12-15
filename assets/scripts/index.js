@@ -21,6 +21,8 @@ $(() => {
   // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
   $('.showIndex').on('click', uploadEvents.onShowIndex)
+  $('.delete-upload').on('click', uploadEvents.onDelete)
+  $('.update-upload').on('click', uploadEvents.onUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file
