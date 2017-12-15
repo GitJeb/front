@@ -55,6 +55,7 @@ const signInSuccess = function (data) {
   clearForms()
   $('#message').html('Signed in successfully')
   $('.modal').modal('hide')
+  $('form').show()
     // Update NavBar
   $('.auth-menu').removeClass('hidden')
   $('.username').html('')
