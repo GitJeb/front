@@ -20,9 +20,8 @@ const indexAllSuccess = function (data) {
   $('#photo-grid').html(indexView({uploads: data.uploads}))
 
   const onDelete = function (data) {
-    store.id = $(event.target).data('id')
-    event.preventDefault()
-    uploadApi.deleteUpload(data)
+    const itemId = $(event.target).attr('data-id')
+    uploadApi.deleteUpload(itemId)
       .then(deleteUploadSuccess)
       .catch(deleteUploadFail)
   }

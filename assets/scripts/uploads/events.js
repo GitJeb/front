@@ -18,7 +18,6 @@ const createUploadMultiPart = function (event) {
 
 // Show all images uploaded
 const onShowIndex = function () {
-  event.preventDefault()
   uploadApi.indexAll()
     .then(uploadUi.indexAllSuccess)
     .catch(uploadUi.indexAllFail)

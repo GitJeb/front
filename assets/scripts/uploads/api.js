@@ -18,21 +18,20 @@ const createMulti = function (data) {
 
 const indexAll = function () {
   return $.ajax({
-    url: config.apiOrigin,
+    url: config.apiOrigin + '/uploads/',
     method: 'GET',
     contentType: false,
     processData: false
   })
 }
 
-const deleteUpload = function (data) {
+const deleteUpload = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/uploads/' + store.upload.id,
+    url: config.apiOrigin + '/uploads/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    },
-    data
+    }
   })
 }
 

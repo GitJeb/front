@@ -40,7 +40,6 @@ const showModal = function (buttonId) {
 }
 
 const signUpSuccess = function (data) {
-  $('#message').html('Signed up successfully. Now please sign in.')
   clearForms()
   showModal('sign-in')
 }
