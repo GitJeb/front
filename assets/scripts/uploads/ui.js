@@ -2,7 +2,8 @@
 
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
-const getFormFields = require('../../../lib/get-form-fields')
+// const getFormFields = require('../../../lib/get-form-fields')
+const store = require('../store')
 
 const success = function (data) {
   console.log('success data is:', data)
@@ -16,26 +17,25 @@ const error = function (error) {
 
 const indexAllSuccess = function (data) {
   console.log(data)
-  $('photo-grid').html(indexView({uploads: data.uploads}))
+  $('#photo-grid').html(indexView({uploads: data.uploads}))
 
-  $('.update-upload').on('click', onUpdate)
-  $('.delete-upload').on('click', onDelete)
-
-  const onDelete = function (event) {
+  const onDelete = function (data) {
+    store.id = $(event.target).data('id')
     event.preventDefault()
-    const data = getFormFields(event.target)
     uploadApi.deleteUpload(data)
       .then(deleteUploadSuccess)
       .catch(deleteUploadFail)
   }
 
-  const onUpdate = function (event) {
+  const onUpdate = function (data) {
+    store.id = $(event.target).data('id')
     event.preventDefault()
-    const data = getFormFields(event.target)
     uploadApi.updateUpload(data)
       .then(updateUploadSuccess)
       .catch(updateUploadFail)
   }
+  $('.update-upload').on('click', onUpdate)
+  $('.delete-upload').on('click', onDelete)
 }
 
 const indexAllFail = function (error) {
