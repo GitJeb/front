@@ -23,10 +23,11 @@ p {
     background: #00EEFF;
 }
 
-#navigation {
+.class {
     float: left;
-    height: 40px;
-    width: 1000px;
+    display: inline-block;
+    height: 100px;
+    width: 100%;
     background: #FFCC33;
 }
 
