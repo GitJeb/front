@@ -10,6 +10,16 @@ const createMulti = function (data) {
   })
 }
 
+const indexAll = function () {
+  return $.ajax({
+    url: 'http://localhost:4741/uploads',
+    method: 'GET',
+    contentType: false,
+    processData: false
+  })
+}
+
 module.exports = {
-  createMulti
+  createMulti,
+  indexAll
 }

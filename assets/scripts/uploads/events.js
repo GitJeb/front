@@ -7,7 +7,6 @@ const uploadUi = require('./ui')
 
 const createUploadMultiPart = function (event) {
   event.preventDefault()
-  console.log('it did something in multipart')
 
   // let data = getFormFields(event.target)
   const data = new FormData(event.target)
@@ -17,6 +16,14 @@ const createUploadMultiPart = function (event) {
     .catch(uploadUi.error)
 }
 
+// Show all images uploaded
+const onShowIndex = function () {
+  uploadApi.indexAll()
+    .then(uploadUi.indexAllSuccess)
+    .catch(uploadUi.indexAllFail)
+}
+
 module.exports = {
-  createUploadMultiPart
+  createUploadMultiPart,
+  onShowIndex
 }
