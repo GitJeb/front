@@ -9,6 +9,7 @@ const uploadEvents = require('./uploads/events')
 $(() => {
   setAPIOrigin(location, config)
   // Register Authorization Events
+  $('form').hide()
   $('.registration').on('submit', events.onRegistration)
   $('.sign-in').on('submit', events.onSignIn)
   $('.change-password').on('submit', events.onChangePassword)
