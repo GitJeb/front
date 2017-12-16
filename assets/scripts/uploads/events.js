@@ -18,6 +18,7 @@ const createUploadMultiPart = function (event) {
 
 // Show all images uploaded
 const onShowIndex = function () {
+  $('.update-form').hide()
   uploadApi.indexAll()
     .then(uploadUi.indexAllSuccess)
     .catch(uploadUi.indexAllFail)

@@ -17,15 +17,15 @@
                         </div>
 
                         <!-- pic update button -->
-                        <div class="-pic-update-button">
-                              <button data-id="{{upload.id}}" class="update-upload">Update</button>
-                      <form id="event-update" class="event-forms">
+                        <div class="-pic-upload-button">
+                            <button class="update-form-button">Update this upload</button>
+                      <form class="update-form">
                         <fieldset>
                           <input name="event[id]" type="text" placeholder="enter event id" required>
                           <input name="event[name]" type="text" placeholder="enter new upload name" required>
                           <br>
                           <br>
-                          <button type="submit" name="submit" class="event-buttons">Update Event!</button>
+                          <button data-id="{{upload.id}}" class="update-upload">Update</button>
                         </fieldset>
                       </form>
                         </div>
