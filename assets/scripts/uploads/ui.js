@@ -28,9 +28,8 @@ const indexAllSuccess = function (data) {
   }
 
   const onUpdate = function (data) {
-    store.id = $(event.target).data('id')
-    event.preventDefault()
-    uploadApi.updateUpload(data)
+    const itemId = $(event.target).attr('data-id')
+    uploadApi.updateUpload(itemId)
       .then(updateUploadSuccess)
       .catch(updateUploadFail)
   }
