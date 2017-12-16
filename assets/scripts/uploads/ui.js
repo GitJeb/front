@@ -60,11 +60,13 @@ const deleteUploadFail = function (error) {
 const updateUploadSuccess = function (data) {
   console.log('success data is:', data)
   $('#message').html('upload successfully updated!')
+  $('.update-form').hide()
 }
 
 const updateUploadFail = function (error) {
   $('#message').html('error on update')
   console.log('upload update error:', error)
+  $('.update-form').hide()
 }
 
 const ShowGallerySuccess = function (data) {
