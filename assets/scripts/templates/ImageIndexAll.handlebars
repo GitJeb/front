@@ -1,13 +1,38 @@
-<h1> All Images </h1>
 
-{{#each uploads as | upload |}}
-<div>
-  <h4> {{upload.title}} </h4>
-  <p> created: {{upload.updatedAt}}</p>
-  <img src= {{upload.url}} alt='image not found'>
-  <div class="upload-buttons">
-    <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
-    <button data-id="{{upload.id}}" class="update-upload">Update</button>
-  </div>
-</div>
-{{/each}}
+    <div class="container">
+        <div class="row">
+
+            {{#each uploads as | upload |}}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <!-- pic display -->
+                        <div class="pic-display">
+                              <img src= {{upload.url}} alt='' id="picz">
+                        </div>
+
+                        <!-- pic delete button -->
+                        <div class="pic-del-button">
+                              <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
+                        </div>
+
+                        <!-- pic update button -->
+                        <div class="-pic-upload-button">
+                              <button data-id="{{upload.id}}" class="update-upload">Update</button>
+                        </div>
+
+                        <!-- pic title -->
+                        <div class="pic-title">
+                              <h4> {{upload.title}} </h4>
+                        </div>
+
+                        <!-- pic upload date -->
+                        <div class="pic-date">
+                              <h4>created: {{upload.updatedAt}} </h4>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+
+        </div>
+      </div>
