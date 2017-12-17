@@ -27,7 +27,9 @@
 
                         <!-- pic upload date -->
                         <div class="pic-date">
-                              <h4>created: {{upload.updatedAt}} </h4>
+                              <!-- trigger custom helper to formate date -->
+                              <h4>created: {{#formatDate upload.updatedAt}}{{/formatDate}} </h4>
+
                         </div>
                     </div>
                 </div>
