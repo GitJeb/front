@@ -18,7 +18,7 @@ const error = function (error) {
 const indexAllSuccess = function (data) {
   // console.log(data)
   $('#photo-grid').html(indexView({uploads: data.uploads}))
-
+  $('#hideme').hide()
   const onDelete = function (data) {
     const itemId = $(event.target).attr('data-id')
     uploadApi.deleteUpload(itemId)
