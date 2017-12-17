@@ -19,13 +19,18 @@
                         <!-- pic update button -->
                         <div class="-pic-upload-button">
                             <button class="update-form-button">Update this upload</button>
-                      <form class="update-form">
+                      <form class="update-form hidden">
                         <fieldset>
-                          <input name="event[id]" type="text" placeholder="enter event id" required>
-                          <input name="event[name]" type="text" placeholder="enter new upload name" required>
-                          <br>
-                          <br>
-                          <button data-id="{{upload.id}}" class="update-upload">Update</button>
+                          <label>
+                            New Title
+                            <input type="text" name="image[title]">
+                        </label>
+
+                        <label>
+                            New Image
+                              <input type="file" name="image[file]">
+                        </label>
+                          <button type="submit" name="submit">Update</button>
                         </fieldset>
                       </form>
                         </div>
