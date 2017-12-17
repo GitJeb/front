@@ -9,7 +9,8 @@
                         <div class="pic-display">
                               <img src= {{upload.url}} alt='' id="picz">
                         </div>
-
+                        <!-- trigger isUser Helper to check if owner is current user -->
+                        {{#isUser upload}}
                         <!-- pic delete button -->
                         <div class="pic-del-button">
                               <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
@@ -19,10 +20,11 @@
                         <div class="-pic-upload-button">
                               <button data-id="{{upload.id}}" class="update-upload">Update</button>
                         </div>
+                        {{/isUser}}
 
                         <!-- pic title -->
                         <div class="pic-title">
-                              <h4> {{upload.title}} </h4>
+                              <h4> {{upload.title}}</h4> by: {{upload._owner.email}}
                         </div>
 
                         <!-- pic upload date -->
