@@ -56,9 +56,29 @@ p {
 
 // picture in indexAll buttons
 .picz {
+  height: 250px;
   display: block;
   height: 150px;
   margin: auto;
+}
+
+.update-upload {
+  float: left;
+}
+
+.pic-title {
+  text-align: center;
+}
+
+.info-overlay {
+  padding: 3px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 20%;
+  text-align: left;
+  color: white;
+  background: rgba(0, 0, 0 , .41);
 }
 
 .pic-date {
@@ -72,6 +92,23 @@ p {
   text-align: center;
 }
 
+.thumbnail {
+  position: relative;
+  border: 3px solid gray;
+  padding: 0;
+  width: 300px;
+  margin: 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.upload {
+    height: 100px;
+    width: 100%;
+    background: #00EEFF;
+}
 
 .pic-title {
   text-align: center;
