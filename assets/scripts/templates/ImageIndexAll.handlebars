@@ -3,14 +3,14 @@
         <div class="row">
 
             {{#each uploads as | upload |}}
+            <!-- trigger isUser Helper to check if owner is current user -->
+            {{#isUser upload}}
                 <div class="col-md-4">
                     <div class="thumbnail">
                         <!-- pic display -->
                         <div class="pic-display">
                               <img src= {{upload.url}} alt='' id="picz">
                         </div>
-                        <!-- trigger isUser Helper to check if owner is current user -->
-                        {{#isUser upload}}
                         <!-- pic delete button -->
                         <div class="pic-del-button">
                               <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
@@ -20,8 +20,6 @@
                         <div class="-pic-update-button">
                               <button data-id="{{upload.id}}" class="update-upload">Update</button>
                         </div>
-                        {{/isUser}}
-
                         <!-- pic title -->
                         <div class="pic-title clearfix">
                               {{upload.title}} by: {{upload._owner.email}}
@@ -31,10 +29,10 @@
                         <div class="pic-date clearfix">
                               <!-- trigger custom helper to formate date -->
                               created: {{#formatDate upload.updatedAt}}{{/formatDate}}
-
                         </div>
                     </div>
                 </div>
+            {{/isUser}}
             {{/each}}
 
 

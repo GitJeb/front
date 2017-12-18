@@ -18,12 +18,14 @@ $(() => {
   // Register Event to Show Form Modal
   $('.auth-modal').on('click', events.onModal)
 
-  uploadEvents.pageShowIndex()
+  // View Events
+  uploadEvents.onShowGallery()
+  // Change PageShowIndex --> onShowGallery
+  $('.pageShowz').on('click', uploadEvents.onShowGallery)
+  $('.showIndex').on('click', uploadEvents.onShowIndex)
 
   // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
-  $('.pageShowz').on('click', uploadEvents.pageShowIndex)
-  $('.showIndex').on('click', uploadEvents.onShowIndex)
 })
 
 // use require with a reference to bundle the file and use it in this file
