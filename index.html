@@ -1,155 +1,144 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Jeb! - The best image hosting site!</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Jeb! - The best file hosting site!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-
-    <!-- Full Body Div -->
-    <body class="container-fluid">
-
-          <!-- Logo and Modal -->
-          <header>
-
-                <!-- logo -->
-                <div class="logo">
-                  <a href="https://gitjeb.github.io/front/"><img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px></a>
-                  <p id="message">This is where ui messages will appear for now!</p>
-                </div>
-
-                  <!-- Modal for displaying authorization forms -->
-                <div class="modal fade auth">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-
-                        <div class="modal-header">
-                            <h3 class="modal-title modal-title-auth"></h3>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-
-                        <div class="modal-body">
-
-                          <form class='registration'>
-                              <label for="RegEmail">Email address</label>
-                              <input id='RegEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
-                              <label for="RegPass1">Password</label>
-                              <input id='RegPass1' class='form-control' name="credentials[password]" type="password" placeholder="password">
-                              <label for="RegPass2">Confirm Password</label>
-                              <input id="RegPass2" class='form-control' name="credentials[password_confirmation]" type="password" placeholder="re-enter password">
-                              <button class='submit btn btn-primary' type='submit'>Sign Up</button>
-                            </form>
-
-                          <form class='sign-in'>
-                              <label for='LogEmail'>Email address</label>
-                              <input id='LogEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
-                              <label for='LogPass'>Password</label>
-                              <input id='LogPass' class='form-control' name="credentials[password]" type='password' placeholder="password">
-                              <button class='btn btn-primary' type='submit'>Sign In</button>
-                              <button id='registration' type='button' class='modal-display auth-modal nav-item btn btn-primary'>Sign Up</button>
-                            </form>
-
-                          <form class='change-password'>
-                              <label for='oldPass'>Current Password</label>
-                              <input id='oldPass' class='form-control' name="passwords[old]" type='password' placeholder="old password">
-                              <label for='newPass'>New Password</label>
-                              <input id='newPass' name="passwords[new]" class='form-control' type='password' placeholder="new password">
-                              <button class='btn btn-primary changepass' id='change-pass-btn' type='submit'>Submit</button>
-                            </form>
-
-                          <div class='formerror formerror-auth alert alert-danger' role="alert"></div>
-
-                    </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                      </div>
-                      </div>
-                    </div>
-                </div>
-
-                <!-- Navbar -->
-                <nav class="navbar navbar-default">
-                  <div class="container-fluid">
-                      <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
-                          <!-- insert navbar brand -->
-                        </a>
-                      </div>
-                      <!-- Navbar Links -->
-                      <ul class="nav navbar-nav">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Pictures</a></li>
-                        <li><a href="#">Uploads</a></li>
-                      </ul>
-                      <!-- Navbar Auth Links -->
-                      <ul class="nav navbar-nav navbar-right">
-                        <button id='sign-in' class='modal-display auth-modal btn btn-default navbar-btn'>Login</button>
-                        <li class="dropdown auth-menu hidden">
-                          <a href="#" class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
-                          <ul class="dropdown-menu">
-                            <li>
-                              <a href='#' id='sign-out' class='signout'>Log Out</a>
-                            </li>
-                            <li>
-                              <a href='#' id='change-password' class='auth-modal'> Change Password </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                      <!-- Upload Picture Form -->
-                      <div class="upload-form">
-                      <!-- user upload picture section -->
-                      <form id="multipart-form-data" class="uploadhere" enctype="multipart/form-data">
-
-                        <fieldset>
-                          <label>
-                            Title
-                            <input type="text" name="image[title]">
-                        </label>
-
-                        <label>
-                              <input type="file" name="image[file]">
-                        </label>
-                          <button type="submit" name="submit">Upload</button>
-                        </fieldset>
-                      </form>
-                  </div>
-                </nav>
-
-              </div>
-
-          </header>
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
 
-          <!-- main section -->
-          <div id="main">
-                  <div class="showzAll">
-                    <button class="btn btn-primary showIndex">SHOW ALL</button>
-                  </div>
-                  <div class="showzAll">
-                    <button class="btn btn-primary pageShowz">SHOW ALL</button>
-                  </div>
-                <div id="photo-grid"></div>
-                <div id="page-show"></div>
+<!-- Full Body Div -->
+
+<body class="container-fluid">
+
+  <!-- Logo and Modal -->
+  <header>
+
+    <!-- logo -->
+    <div class="logo">
+      <a href="https://gitjeb.github.io/front/"><img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px></a>
+      <p id="message">This is where ui messages will appear for now!</p>
+    </div>
+
+    <!-- Modal for displaying authorization forms -->
+    <div class="modal fade auth">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h3 class="modal-title modal-title-auth"></h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
           </div>
 
+          <div class="modal-body">
+            <form class='registration'>
+              <label for="RegEmail">Email address</label>
+              <input id='RegEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
+              <label for="RegPass1">Password</label>
+              <input id='RegPass1' class='form-control' name="credentials[password]" type="password" placeholder="password">
+              <label for="RegPass2">Confirm Password</label>
+              <input id="RegPass2" class='form-control' name="credentials[password_confirmation]" type="password" placeholder="re-enter password">
+              <button class='submit btn btn-primary' type='submit'>Sign Up</button>
+            </form>
 
-          <!-- footer -->
-          <div id="footer">
-                <p>This is the Footer</p>
+            <form class='sign-in'>
+              <label for='LogEmail'>Email address</label>
+              <input id='LogEmail' class='form-control' name="credentials[email]" type='text' placeholder="email">
+              <label for='LogPass'>Password</label>
+              <input id='LogPass' class='form-control' name="credentials[password]" type='password' placeholder="password">
+              <button class='btn btn-primary' type='submit'>Sign In</button>
+              <button id='registration' type='button' class='modal-display auth-modal nav-item btn btn-primary'>Sign Up</button>
+            </form>
+
+            <form class='change-password'>
+              <label for='oldPass'>Current Password</label>
+              <input id='oldPass' class='form-control' name="passwords[old]" type='password' placeholder="old password">
+              <label for='newPass'>New Password</label>
+              <input id='newPass' name="passwords[new]" class='form-control' type='password' placeholder="new password">
+              <button class='btn btn-primary changepass' id='change-pass-btn' type='submit'>Submit</button>
+            </form>
+
+            <div class='formerror formerror-auth alert alert-danger' role="alert"></div>
+
           </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </body>
+    <!-- Navbar -->
+    <!-- <div class="container-fluid"> -->
+      <nav class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">
+            <!-- insert navbar brand -->
+          </a>
+        </div>
+        <!-- Navbar Links -->
+        <ul class="nav navbar-nav">
+          <li class='pageShowz active'><a href="#">Gallery</a></li>
+          <li class='showIndex hidden'><a href="#">My Uploads</a></li>
+        </ul>
+        <!-- Navbar Auth Links -->
+        <ul class="nav navbar-nav navbar-right">
+          <button id='sign-in' class='modal-display auth-modal btn btn-default navbar-btn'>Login</button>
+          <li class="dropdown auth-menu hidden">
+            <a href="#" class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href='#' id='sign-out' class='signout'>Log Out</a>
+              </li>
+              <li>
+                <a href='#' id='change-password' class='auth-modal'> Change Password </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Upload Picture Form -->
+        <div class="upload-form">
+          <!-- user upload picture section -->
+          <form id="multipart-form-data" class="uploadhere" enctype="multipart/form-data">
+            <fieldset>
+              <label>Title<input type="text" name="image[title]"></label>
+              <label><input type="file" name="image[file]"></label>
+              <button type="submit" name="submit">Upload</button>
+            </fieldset>
+          </form>
+        </div>
+      </nav>
+    <!-- </div> -->
+  </header>
+
+
+  <!-- main section -->
+  <div id="main">
+    <div id="photo-grid"></div>
+<!-- <div class="showzAll">
+      <button class="btn btn-primary showIndex">SHOW ALL</button>
+    </div>
+    <div class="showzAll">
+      <button class="btn btn-primary pageShowz">SHOW ALL</button>
+    </div> -->
+    <!-- <div id="page-show"></div> -->
+  </div>
+
+
+  <!-- footer -->
+  <div id="footer">
+    <p>This is the Footer</p>
+  </div>
+
+</body>
 
 </html>

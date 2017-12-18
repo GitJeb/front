@@ -3,11 +3,12 @@
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
 const pageShow = require('../templates/pageShow.handlebars')
-const store = require('../store')
 
-const success = function (data) {
-  console.log('success data is:', data)
-  $('#message').html('success!')
+const getFormFields = require('../../../lib/get-form-fields')
+// const store = require('../store')
+
+const success = function () {
+  $('#message').html('File uploaded successfully!')
 }
 
 const error = function (error) {
@@ -15,26 +16,25 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
+const onUpdate = function (event) {
+  event.preventDefault()
+  const itemId = $(event.target).attr('data-id')
+  const data = getFormFields(event.target)
+  uploadApi.updateUpload(itemId, data)
+    .then(updateUploadSuccess)
+    .catch(updateUploadFail)
+}
+
+const onDelete = function (data) {
+  const itemId = $(event.target).attr('data-id')
+  uploadApi.deleteUpload(itemId)
+    .then(deleteUploadSuccess)
+    .catch(deleteUploadFail)
+}
+
 const indexAllSuccess = function (data) {
-  console.log(data)
   $('#photo-grid').html(indexView({uploads: data.uploads}))
-
-  const onDelete = function (data) {
-    const itemId = $(event.target).attr('data-id')
-    uploadApi.deleteUpload(itemId)
-      .then(deleteUploadSuccess)
-      .catch(deleteUploadFail)
-  }
-
-  const onUpdate = function (data) {
-    store.id = $(event.target).data('id')
-    event.preventDefault()
-    uploadApi.updateUpload(data)
-      .then(updateUploadSuccess)
-      .catch(updateUploadFail)
-  }
-  $('.update-upload').on('click', onUpdate)
-  $('.delete-upload').on('click', onDelete)
+  activateLink('.showIndex')
 }
 
 const indexAllFail = function (error) {
@@ -45,6 +45,11 @@ const indexAllFail = function (error) {
 const deleteUploadSuccess = function (data) {
   console.log('success data is:', data)
   $('#message').html('upload successfully deleted!')
+
+  // Refresh My Uploads Page
+  uploadApi.indexAll()
+    .then(indexAllSuccess)
+    .catch(indexAllFail)
 }
 
 const deleteUploadFail = function (error) {
@@ -53,7 +58,6 @@ const deleteUploadFail = function (error) {
 }
 
 const updateUploadSuccess = function (data) {
-  console.log('success data is:', data)
   $('#message').html('upload successfully updated!')
 }
 
@@ -62,12 +66,18 @@ const updateUploadFail = function (error) {
   console.log('upload update error:', error)
 }
 
-const pageShowSuccess = function (data) {
-  $('#page-show').html(pageShow({uploads: data.uploads}))
+const ShowGallerySuccess = function (data) {
+  $('#photo-grid').html(pageShow({uploads: data.uploads}))
+  activateLink('.pageShowz')
 }
 
-const pageShowFail = function () {
+const ShowGalleryFail = function () {
   $('#message').html('error')
+}
+
+const activateLink = function (target) {
+  $('li').removeClass('active')
+  $(target).addClass('active')
 }
 
 module.exports = {
@@ -79,6 +89,8 @@ module.exports = {
   deleteUploadFail,
   updateUploadSuccess,
   updateUploadFail,
-  pageShowSuccess,
-  pageShowFail
+  ShowGallerySuccess,
+  ShowGalleryFail,
+  onDelete,
+  onUpdate
 }

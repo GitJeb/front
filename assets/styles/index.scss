@@ -2,6 +2,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
 
+.navbar-right {
+  padding-right:10px;
+  margin-right:0px;
+}
+
 body {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 13px;
@@ -18,14 +23,7 @@ p {
 }
 
 // picture in indexAll buttons
-#picz {
-  height: 150px;
-  display: block;
-  margin: auto;
-}
-
-// show pics no buttons
-#pict {
+.picz {
   height: 150px;
   display: block;
   margin: auto;
@@ -47,6 +45,7 @@ p {
   display: block;
   margin: auto;
   text-align: center;
+  overflow: hidden;
 }
 
 .thumbnail {
@@ -108,7 +107,6 @@ section {
 
 #footer {
     height: 40px;
-    width: 1000px;
     background: #33FF66;
     clear: both;
 }
