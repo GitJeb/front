@@ -19,11 +19,10 @@ const error = function (error) {
 
 const onUpdate = function (event) {
   event.preventDefault()
-  // const itemId = $(event.target).attr('data-id')
+  const itemId = $(event.target).attr('data-id')
+  console.log(itemId)
   const data = getFormFields(event.target)
-  // const itemData = new FormData(event.target)
-  console.log(data)
-  uploadApi.updateUpload(data)
+  uploadApi.updateUpload(itemId, data)
     .then(updateUploadSuccess)
     .catch(updateUploadFail)
 }
@@ -62,7 +61,6 @@ const deleteUploadFail = function (error) {
 }
 
 const updateUploadSuccess = function (data) {
-  console.log('success data is:', data)
   $('#message').html('upload successfully updated!')
 }
 
