@@ -41,7 +41,8 @@ const updateUpload = function (id) {
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    id
   })
 }
 
