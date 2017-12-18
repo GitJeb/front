@@ -21,6 +21,28 @@ const showUpdateForm = function () {
   })
 }
 
+const updateActions = function () {
+  $('.update-upload').on('submit', onUpdate)
+  $('.delete-upload').on('click', onDelete)
+}
+
+const onUpdate = function (event) {
+  event.preventDefault()
+  // const itemId = $(event.target).attr('data-id')
+  const itemData = new FormData(event.target)
+  console.log(itemData)
+  uploadApi.updateUpload(itemData)
+    .then(updateUploadSuccess)
+    .catch(updateUploadFail)
+}
+
+const onDelete = function (data) {
+  const itemId = $(event.target).attr('data-id')
+  uploadApi.deleteUpload(itemId)
+    .then(deleteUploadSuccess)
+    .catch(deleteUploadFail)
+}
+
 const indexAllSuccess = function (data) {
   $('#photo-grid').html(indexView({uploads: data.uploads}))
   activateLink('.showIndex')

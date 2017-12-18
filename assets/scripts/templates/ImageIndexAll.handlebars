@@ -19,15 +19,17 @@
                         <!-- pic update button -->
                         <div class="-pic-upload-button">
                             <button class="update-form-button">Update this upload</button>
-                      <form class="update-form hidden">
+
+                      <form data-id="{{upload.id}}" class="update-form hidden">
                         <fieldset>
                           <label>
                             New Title
                             <input type="text" name="image[title]">
                         </label>
-                          <button data-id="{{upload.id}}" class="update-upload" type="submit" name="submit">Update</button>
+                          <input class="update-upload" type="submit">Update</input>
                         </fieldset>
                       </form>
+
                         </div>
                         <!-- pic title -->
                         <div class="pic-title clearfix">

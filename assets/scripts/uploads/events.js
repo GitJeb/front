@@ -24,6 +24,7 @@ const onShowIndex = function () {
   uploadApi.indexAll()
     .then(uploadUi.indexAllSuccess)
     .then(uploadUi.showUpdateForm)
+    .then(uploadUi.updateActions)
     .catch(uploadUi.indexAllFail)
 }
 
