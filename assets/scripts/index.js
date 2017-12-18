@@ -3,8 +3,9 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./auth/events')
-
 const uploadEvents = require('./uploads/events')
+const uploadUi = require('./uploads/ui')
+// const uploadApi = require('./uploads/api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -26,6 +27,16 @@ $(() => {
 
   // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
+  $('.pageShowz').on('click', uploadEvents.pageShowIndex)
+  $('.showIndex').on('click', uploadEvents.onShowIndex)
+
+  const showUpdateForm = function (event) {
+    $(this).siblings().removeClass('hidden')
+  }
+
+  $('#photo-grid').on('click', '.delete-upload', uploadUi.onDelete)
+  $('#photo-grid').on('click', '.update-form-button', showUpdateForm)
+  $('#photo-grid').on('submit', '.update-form', uploadUi.onUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file

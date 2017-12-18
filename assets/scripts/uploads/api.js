@@ -5,7 +5,7 @@ const config = require('../config')
 
 const createMulti = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/uploads/',
+    url: config.apiOrigin + /uploads/,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
@@ -35,9 +35,10 @@ const deleteUpload = function (id) {
   })
 }
 
-const updateUpload = function (data) {
+const updateUpload = function (id, data) {
+  console.log(data)
   return $.ajax({
-    url: config.apiOrigin + '/uploads/' + store.upload.id,
+    url: config.apiOrigin + '/uploads/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
