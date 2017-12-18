@@ -16,7 +16,7 @@ const error = function (error) {
 }
 
 const indexAllSuccess = function (data) {
-  console.log(data)
+  // console.log(data)
   $('#photo-grid').html(indexView({uploads: data.uploads}))
   activateLink('.showIndex')
 
