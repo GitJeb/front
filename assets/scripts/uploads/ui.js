@@ -7,7 +7,6 @@ const pageShow = require('../templates/pageShow.handlebars')
 const getFormFields = require('../../../lib/get-form-fields')
 // const store = require('../store')
 
-
 const success = function () {
   $('#message').html('File uploaded successfully!')
 }
@@ -36,24 +35,6 @@ const onDelete = function (data) {
 const indexAllSuccess = function (data) {
   $('#photo-grid').html(indexView({uploads: data.uploads}))
   activateLink('.showIndex')
-
-  const onDelete = function (data) {
-    const itemId = $(event.target).attr('data-id')
-    uploadApi.deleteUpload(itemId)
-      .then(deleteUploadSuccess)
-      .catch(deleteUploadFail)
-  }
-
-  const onUpdate = function (data) {
-    event.preventDefault()
-    const itemId = $(event.target).attr('data-id')
-    console.log(itemId)
-    uploadApi.updateUpload(itemId)
-      .then(updateUploadSuccess)
-      .catch(updateUploadFail)
-  }
-  $('.update-upload').on('click', onUpdate)
-  $('.delete-upload').on('click', onDelete)
 }
 
 const indexAllFail = function (error) {
