@@ -7,13 +7,14 @@ const pageShow = require('../templates/pageShow.handlebars')
 const getFormFields = require('../../../lib/get-form-fields')
 // const store = require('../store')
 
+// upload success
 const success = function () {
   $('#message').html('File uploaded successfully!')
 }
 
-const error = function (error) {
-  $('#message').html('error')
-  console.log('error is:', error)
+// upload error
+const error = function () {
+  $('#message').html('Upload Unsuccessful. Please try again!')
 }
 
 const onUpdate = function (event) {

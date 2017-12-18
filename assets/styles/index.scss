@@ -1,21 +1,27 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$red: #333;
+$gray: #d3d3d3;
 
 .navbar-right {
-  padding-right:10px;
-  margin-right:0px;
+  margin-right: 1px;
+  padding-right: 10px;
 }
 
 body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: #333;
-    margin: 0 auto;
+  color: $red;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  margin: 0 auto;
+}
+
+.clearfix {
+  clear: both;
 }
 
 p {
-    padding: 10px;
+  padding: 10px;
 }
 
 .parent-display {
@@ -24,17 +30,9 @@ p {
 
 // picture in indexAll buttons
 .picz {
-  height: 150px;
   display: block;
+  height: 150px;
   margin: auto;
-}
-
-.update-upload {
-  float: left;
-}
-
-.pic-title {
-  text-align: center;
 }
 
 .pic-date {
@@ -44,24 +42,28 @@ p {
 .pic-display {
   display: block;
   margin: auto;
-  text-align: center;
   overflow: hidden;
+  text-align: center;
+}
+
+
+.pic-title {
+  text-align: center;
 }
 
 .thumbnail {
-  border: 3px solid gray;
+  border: 3px solid $gray;
   padding: 3px;
-  width: 300px,
+  width: 300px;
 }
 
-.clearfix {
-  clear: both;
+.update-upload {
+  float: left;
 }
 
 .upload {
-    height: 100px;
-    width: 100%;
-    background: #00EEFF;
+  height: 100px;
+  width: 100%;
 }
 
 .modal-fade-auth {
