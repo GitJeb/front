@@ -1,13 +1,42 @@
-<h1> All Images </h1>
 
-{{#each uploads as | upload |}}
-<div>
-  <h4> {{upload.title}} </h4>
-  <p> created: {{upload.updatedAt}}</p>
-  <img src= {{upload.url}} alt='image not found'>
-  <div class="upload-buttons">
-    <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
-    <button data-id="{{upload.id}}" class="update-upload">Update</button>
-  </div>
-</div>
-{{/each}}
+    <div class="container">
+        <div class="row">
+
+            {{#each uploads as | upload |}}
+                <div class="col-md-4">
+                    <div class="thumbnail">
+                        <!-- pic display -->
+                        <div class="pic-display">
+                              <img src= {{upload.url}} alt='' id="picz">
+                        </div>
+                        <!-- trigger isUser Helper to check if owner is current user -->
+                        {{#isUser upload}}
+                        <!-- pic delete button -->
+                        <div class="pic-del-button">
+                              <button data-id="{{upload.id}}" class="delete-upload">Delete</button>
+                        </div>
+
+                        <!-- pic update button -->
+                        <div class="-pic-update-button">
+                              <button data-id="{{upload.id}}" class="update-upload">Update</button>
+                        </div>
+                        {{/isUser}}
+
+                        <!-- pic title -->
+                        <div class="pic-title clearfix">
+                              {{upload.title}} by: {{upload._owner.email}}
+                        </div>
+
+                        <!-- pic upload date -->
+                        <div class="pic-date clearfix">
+                              <!-- trigger custom helper to formate date -->
+                              created: {{#formatDate upload.updatedAt}}{{/formatDate}}
+
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+
+        </div>
+      </div>

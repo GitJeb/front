@@ -18,8 +18,11 @@ $(() => {
   // Register Event to Show Form Modal
   $('.auth-modal').on('click', events.onModal)
 
+  uploadEvents.pageShowIndex()
+
   // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
+  $('.pageShowz').on('click', uploadEvents.pageShowIndex)
   $('.showIndex').on('click', uploadEvents.onShowIndex)
 })
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Group Project</title>
+      <title>Jeb! - The best image hosting site!</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -14,14 +14,14 @@
 
 
     <!-- Full Body Div -->
-    <body class="container-fluid" id="wrapper">
+    <body class="container-fluid">
 
           <!-- Logo and Modal -->
           <header>
 
                 <!-- logo -->
                 <div class="logo">
-                  <img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px>
+                  <a href="https://gitjeb.github.io/front/"><img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px></a>
                   <p id="message">This is where ui messages will appear for now!</p>
                 </div>
 
@@ -80,73 +80,68 @@
                 <!-- Navbar -->
                 <nav class="navbar navbar-default">
                   <div class="container-fluid">
-                    <div class="navbar-header">
-                      <a class="navbar-brand" href="#">
-                        <!-- insert navbar brand -->
-                      </a>
-                    </div>
-                    <!-- Navbar Links -->
-                    <ul class="nav navbar-nav">
-                      <li><a href="#">About Us</a></li>
-                      <li><a href="#">Products</a></li>
-                      <li><a href="#">Pictures</a></li>
-                      <li><a href="#">Uploads</a></li>
-                    </ul>
-                    <!-- Navbar Auth Links -->
-                    <ul class="nav navbar-nav navbar-right">
-                      <button id='sign-in' class='modal-display auth-modal btn btn-default navbar-btn'>Login</button>
-                      <li class="dropdown auth-menu hidden">
-                        <a href="#" class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li>
-                            <a href='#' id='sign-out' class='signout'>Log Out</a>
-                          </li>
-                          <li>
-                            <a href='#' id='change-password' class='auth-modal'> Change Password </a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="#">
+                          <!-- insert navbar brand -->
+                        </a>
+                      </div>
+                      <!-- Navbar Links -->
+                      <ul class="nav navbar-nav">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">Pictures</a></li>
+                        <li><a href="#">Uploads</a></li>
+                      </ul>
+                      <!-- Navbar Auth Links -->
+                      <ul class="nav navbar-nav navbar-right">
+                        <button id='sign-in' class='modal-display auth-modal btn btn-default navbar-btn'>Login</button>
+                        <li class="dropdown auth-menu hidden">
+                          <a href="#" class="dropdown-toggle username" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a href='#' id='sign-out' class='signout'>Log Out</a>
+                            </li>
+                            <li>
+                              <a href='#' id='change-password' class='auth-modal'> Change Password </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                      <!-- Upload Picture Form -->
+                      <div class="upload-form">
+                      <!-- user upload picture section -->
+                      <form id="multipart-form-data" class="uploadhere" enctype="multipart/form-data">
+
+                        <fieldset>
+                          <label>
+                            Title
+                            <input type="text" name="image[title]">
+                        </label>
+
+                        <label>
+                              <input type="file" name="image[file]">
+                        </label>
+                          <button type="submit" name="submit">Upload</button>
+                        </fieldset>
+                      </form>
                   </div>
                 </nav>
 
+              </div>
+
           </header>
 
-          <!-- user upload picture section -->
-          <div class="upload">
-
-                <form id="multipart-form-data" enctype="multipart/form-data">
-                      <fieldset>
-                        <h3>Upload your picture here!</h3>
-                        <label>
-                          Title
-                          <input type="text" name="image[title]">
-                        </label>
-                        <label>
-                          Image
-                          <input type="file" name="image[file]">
-                        </label>
-                        <button type="submit" name="submit">Upload</button>
-                      </fieldset>
-                </form>
-          </div>
-
-            </div>
 
           <!-- main section -->
           <div id="main">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper
-                  porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
                   <div class="showzAll">
-                      <br>
-                      <br>
-                      Something Something Something
-                      <br><br>
-                      <div></div>
-                      <legend>SHOW ALL BUTTON</legend>
-                      <button class="btn btn-primary showIndex">SHOW ALL</button>
+                    <button class="btn btn-primary showIndex">SHOW ALL</button>
+                  </div>
+                  <div class="showzAll">
+                    <button class="btn btn-primary pageShowz">SHOW ALL</button>
                   </div>
                 <div id="photo-grid"></div>
+                <div id="page-show"></div>
           </div>
 
 
@@ -156,4 +151,5 @@
           </div>
 
     </body>
-    </html>
+
+</html>

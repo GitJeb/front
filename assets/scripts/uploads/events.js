@@ -23,7 +23,14 @@ const onShowIndex = function () {
     .catch(uploadUi.indexAllFail)
 }
 
+const pageShowIndex = function () {
+  uploadApi.indexAll()
+  .then(uploadUi.pageShowSuccess)
+  .catch(uploadUi.pageShowFail)
+}
+
 module.exports = {
   createUploadMultiPart,
-  onShowIndex
+  onShowIndex,
+  pageShowIndex
 }

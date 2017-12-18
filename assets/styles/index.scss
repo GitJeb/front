@@ -7,11 +7,56 @@ body {
     font-size: 13px;
     color: #333;
     margin: 0 auto;
-    width: 1000px;
 }
 
 p {
     padding: 10px;
+}
+
+.parent-display {
+  float: left;
+}
+
+// picture in indexAll buttons
+#picz {
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+// show pics no buttons
+#pict {
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.update-upload {
+  float: left;
+}
+
+.pic-title {
+  text-align: center;
+}
+
+.pic-date {
+  text-align: center;
+}
+
+.pic-display {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.thumbnail {
+  border: 3px solid gray;
+  padding: 3px;
+  width: 300px,
+}
+
+.clearfix {
+  clear: both;
 }
 
 .upload {
@@ -20,15 +65,11 @@ p {
     background: #00EEFF;
 }
 
-.class {
-    float: left;
-    display: inline-block;
-    height: 100px;
-    width: 100%;
-    background: #FFCC33;
+.modal-fade-auth {
 }
 
-.modal-fade-auth {
+.upload-form {
+  padding-left:  100px;
 }
 
 section {
@@ -42,8 +83,16 @@ section {
   float: left;
 }
 
+.uploadhere {
+  padding-left: 200px;
+  padding-top: 18px;
+  display: inline-block;
+
+}
+
 .photo-grid {
   float: left;
+  padding-top: 100px;
 }
 
 #message {
@@ -52,6 +101,7 @@ section {
 
 #main {
     background: #FF0000;
+    height: 80%;
     width: 100%;
     float: left;
 }
