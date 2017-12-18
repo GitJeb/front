@@ -2,7 +2,7 @@
 
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
-// const getFormFields = require('../../../lib/get-form-fields')
+const pageShow = require('../templates/pageShow.handlebars')
 const store = require('../store')
 
 const success = function (data) {
@@ -62,6 +62,14 @@ const updateUploadFail = function (error) {
   console.log('upload update error:', error)
 }
 
+const pageShowSuccess = function (data) {
+  $('#page-show').html(pageShow({uploads: data.uploads}))
+}
+
+const pageShowFail = function () {
+  $('#message').html('error')
+}
+
 module.exports = {
   success,
   error,
@@ -70,7 +78,7 @@ module.exports = {
   deleteUploadSuccess,
   deleteUploadFail,
   updateUploadSuccess,
-  updateUploadFail
-  // onDelete,
-  // onUpdate
+  updateUploadFail,
+  pageShowSuccess,
+  pageShowFail
 }

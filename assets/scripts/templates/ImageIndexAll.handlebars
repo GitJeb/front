@@ -17,20 +17,20 @@
                         </div>
 
                         <!-- pic update button -->
-                        <div class="-pic-upload-button">
+                        <div class="-pic-update-button">
                               <button data-id="{{upload.id}}" class="update-upload">Update</button>
                         </div>
                         {{/isUser}}
 
                         <!-- pic title -->
-                        <div class="pic-title">
-                              <h4> {{upload.title}}</h4> by: {{upload._owner.email}}
+                        <div class="pic-title clearfix">
+                              {{upload.title}} by: {{upload._owner.email}}
                         </div>
 
                         <!-- pic upload date -->
-                        <div class="pic-date">
+                        <div class="pic-date clearfix">
                               <!-- trigger custom helper to formate date -->
-                              <h4>created: {{#formatDate upload.updatedAt}}{{/formatDate}} </h4>
+                              created: {{#formatDate upload.updatedAt}}{{/formatDate}}
 
                         </div>
                     </div>
