@@ -5,7 +5,7 @@ const config = require('../config')
 
 const createMulti = function (data) {
   return $.ajax({
-    url: 'http://localhost:4741/uploads',
+    url: config.apiOrigin + /uploads/,
     headers: {
       Authorization: 'Token token=' + store.user.token
     },

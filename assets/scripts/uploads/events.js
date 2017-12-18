@@ -20,14 +20,11 @@ const createUploadMultiPart = function (event) {
 const onShowIndex = function () {
   uploadApi.indexAll()
     .then(uploadUi.indexAllSuccess)
+    .then(uploadUi.showUpdateForm)
     .catch(uploadUi.indexAllFail)
 }
 
-const showUpdateForm = function (event) {
-  // $('#hideme').show()
-}
 module.exports = {
   createUploadMultiPart,
-  onShowIndex,
-  showUpdateForm
+  onShowIndex
 }

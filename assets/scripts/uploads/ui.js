@@ -15,8 +15,13 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
+const showUpdateForm = function () {
+  $('.update-form-button').on('click', () => {
+    $('.update-form').removeClass('hidden')
+  })
+}
+
 const indexAllSuccess = function (data) {
-  // console.log(data)
   $('#photo-grid').html(indexView({uploads: data.uploads}))
   const onDelete = function (data) {
     const itemId = $(event.target).attr('data-id')
@@ -26,7 +31,9 @@ const indexAllSuccess = function (data) {
   }
 
   const onUpdate = function (data) {
+    event.preventDefault()
     const itemId = $(event.target).attr('data-id')
+    console.log(itemId)
     uploadApi.updateUpload(itemId)
       .then(updateUploadSuccess)
       .catch(updateUploadFail)
@@ -53,13 +60,11 @@ const deleteUploadFail = function (error) {
 const updateUploadSuccess = function (data) {
   console.log('success data is:', data)
   $('#message').html('upload successfully updated!')
-  $('.update-form').hide()
 }
 
 const updateUploadFail = function (error) {
   $('#message').html('error on update')
   console.log('upload update error:', error)
-  $('.update-form').hide()
 }
 
 module.exports = {
@@ -70,5 +75,6 @@ module.exports = {
   deleteUploadSuccess,
   deleteUploadFail,
   updateUploadSuccess,
-  updateUploadFail
+  updateUploadFail,
+  showUpdateForm
 }
