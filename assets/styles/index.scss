@@ -1,21 +1,53 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+$darkgray: #333;
+$gray: #d3d3d3;
+$white: #fff;
+$reds: #ff0000;
+$green: #33ff66;
+
 
 .navbar-right {
-  padding-right:10px;
-  margin-right:0px;
+  margin-right: 1px;
+  padding-right: 10px;
 }
 
 body {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: #333;
-    margin: 0 auto;
+  color: $darkgray;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  margin: 0 auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+#footer {
+  background: $green;
+  clear: both;
+  height: 40px;
+}
+
+#main {
+  background: $reds;
+  float: left;
+  height: 80%;
+  width: 100%;
+}
+
+#message {
+  float: right;
+}
+
+.photo-grid {
+  float: left;
+  padding-top: 100px;
 }
 
 p {
-    padding: 10px;
+  padding: 10px;
 }
 
 .parent-display {
@@ -24,17 +56,9 @@ p {
 
 // picture in indexAll buttons
 .picz {
-  height: 150px;
   display: block;
+  height: 150px;
   margin: auto;
-}
-
-.update-upload {
-  float: left;
-}
-
-.pic-title {
-  text-align: center;
 }
 
 .pic-date {
@@ -44,69 +68,48 @@ p {
 .pic-display {
   display: block;
   margin: auto;
-  text-align: center;
   overflow: hidden;
+  text-align: center;
 }
 
-.thumbnail {
-  border: 3px solid gray;
-  padding: 3px;
-  width: 300px,
+
+.pic-title {
+  text-align: center;
 }
 
-.clearfix {
-  clear: both;
-}
-
-.upload {
-    height: 100px;
-    width: 100%;
-    background: #00EEFF;
-}
-
-.modal-fade-auth {
-}
-
-.upload-form {
-  padding-left:  100px;
-}
 
 section {
-    float: left;
-    background: #FFFFFF;
-    width: 100%;
-    padding-top: 200px;
+  background: $white;
+  float: left;
+  padding-top: 200px;
+  width: 100%;
 }
 
 .showzAll {
   float: left;
 }
 
+.thumbnail {
+  border: 3px solid $gray;
+  padding: 3px;
+  width: 300px;
+}
+
+.update-upload {
+  float: left;
+}
+
+.upload {
+  height: 100px;
+  width: 100%;
+}
+
+.upload-form {
+  padding-left:  100px;
+}
+
 .uploadhere {
+  display: inline-block;
   padding-left: 200px;
   padding-top: 18px;
-  display: inline-block;
-
-}
-
-.photo-grid {
-  float: left;
-  padding-top: 100px;
-}
-
-#message {
-  float: right;
-}
-
-#main {
-    background: #FF0000;
-    height: 80%;
-    width: 100%;
-    float: left;
-}
-
-#footer {
-    height: 40px;
-    background: #33FF66;
-    clear: both;
 }
