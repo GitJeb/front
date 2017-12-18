@@ -18,6 +18,7 @@ const error = function (error) {
 const indexAllSuccess = function (data) {
   console.log(data)
   $('#photo-grid').html(indexView({uploads: data.uploads}))
+  activateLink('.showIndex')
 
   const onDelete = function (data) {
     const itemId = $(event.target).attr('data-id')
@@ -62,12 +63,19 @@ const updateUploadFail = function (error) {
   console.log('upload update error:', error)
 }
 
-const pageShowSuccess = function (data) {
-  $('#page-show').html(pageShow({uploads: data.uploads}))
+const ShowGallerySuccess = function (data) {
+  $('#photo-grid').html(pageShow({uploads: data.uploads}))
+  activateLink('.pageShowz')
 }
 
-const pageShowFail = function () {
+const ShowGalleryFail = function () {
   $('#message').html('error')
+}
+
+
+const activateLink = function (target) {
+  $('li').removeClass('active')
+  $(target).addClass('active')
 }
 
 module.exports = {
@@ -79,6 +87,6 @@ module.exports = {
   deleteUploadFail,
   updateUploadSuccess,
   updateUploadFail,
-  pageShowSuccess,
-  pageShowFail
+  ShowGallerySuccess,
+  ShowGalleryFail
 }

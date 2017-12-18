@@ -13,6 +13,7 @@ const createUploadMultiPart = function (event) {
 
   uploadApi.createMulti(data)
     .then(uploadUi.success)
+    .then(onShowGallery)
     .catch(uploadUi.error)
 }
 
@@ -23,14 +24,15 @@ const onShowIndex = function () {
     .catch(uploadUi.indexAllFail)
 }
 
-const pageShowIndex = function () {
+const onShowGallery = function () {
   uploadApi.indexAll()
-  .then(uploadUi.pageShowSuccess)
-  .catch(uploadUi.pageShowFail)
+  // pageShowSuccess/ Fail --> ShowGallery Sucess/Fail
+  .then(uploadUi.ShowGallerySuccess)
+  .catch(uploadUi.ShowGalleryFail)
 }
 
 module.exports = {
   createUploadMultiPart,
   onShowIndex,
-  pageShowIndex
+  onShowGallery
 }
