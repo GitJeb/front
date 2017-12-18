@@ -5,7 +5,7 @@ const config = require('./config')
 const events = require('./auth/events')
 const uploadEvents = require('./uploads/events')
 const uploadUi = require('./uploads/ui')
-const uploadApi = require('./uploads/api')
+// const uploadApi = require('./uploads/api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -27,22 +27,23 @@ $(() => {
   $('.showIndex').on('click', uploadEvents.onShowIndex)
 
   const showUpdateForm = function (event) {
+    console.log('event delegation works')
     $(this).siblings().removeClass('hidden')
   }
-
-  const onUpdate = function (event) {
-    // event.preventDefault()
-    // const itemId = $(event.target).attr('data-id')
-    const itemData = new FormData(this.siblings())
-    console.log(itemData)
-    uploadApi.updateUpload(itemData)
-      .then(uploadUi.updateUploadSuccess)
-      .catch(uploadUi.updateUploadFail)
-  }
+  //
+  // const onUpdate = function (event) {
+  //   // event.preventDefault()
+  //   // const itemId = $(event.target).attr('data-id')
+  //   const itemData = new FormData(this.siblings())
+  //   console.log(itemData)
+  //   uploadApi.updateUpload(itemData)
+  //     .then(uploadUi.updateUploadSuccess)
+  //     .catch(uploadUi.updateUploadFail)
+  // }
 
   $('#photo-grid').on('click', '.delete-upload', uploadUi.onDelete)
   $('#photo-grid').on('click', '.update-form-button', showUpdateForm)
-  $('#photo-grid').on('submit', '.update-upload', onUpdate)
+  $('#photo-grid').on('submit', '.update-form', uploadUi.onUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file

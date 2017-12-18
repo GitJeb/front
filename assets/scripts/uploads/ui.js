@@ -3,7 +3,8 @@
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
 const pageShow = require('../templates/pageShow.handlebars')
-// const getFormFields = require('../../../lib/get-form-fields')
+
+const getFormFields = require('../../../lib/get-form-fields')
 // const store = require('../store')
 
 const success = function (data) {
@@ -16,19 +17,16 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
-// const showUpdateForm = function () {
-//   $(this).siblings().removeClass('hidden')
-// }
-
-// const onUpdate = function () {
-//   event.preventDefault()
-//   // const itemId = $(event.target).attr('data-id')
-//   const itemData = new FormData(this.siblings())
-//   console.log(itemData)
-//   uploadApi.updateUpload(itemData)
-//     .then(updateUploadSuccess)
-//     .catch(updateUploadFail)
-// }
+const onUpdate = function (event) {
+  event.preventDefault()
+  // const itemId = $(event.target).attr('data-id')
+  const data = getFormFields(event.target)
+  // const itemData = new FormData(event.target)
+  console.log(data)
+  uploadApi.updateUpload(data)
+    .then(updateUploadSuccess)
+    .catch(updateUploadFail)
+}
 
 const onDelete = function (data) {
   const itemId = $(event.target).attr('data-id')
@@ -93,6 +91,6 @@ module.exports = {
   pageShowSuccess,
   pageShowFail,
   // showUpdateForm,
-  onDelete
-  // onUpdate
+  onDelete,
+  onUpdate
 }
