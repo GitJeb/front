@@ -21,7 +21,6 @@ $(() => {
   // Upload Events
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
   $('.showIndex').on('click', uploadEvents.onShowIndex)
-  $('.update-form').hide()
   $('.update-form-button').on('click', uploadEvents.showUpdateForm)
 })
 

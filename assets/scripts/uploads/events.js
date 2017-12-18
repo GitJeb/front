@@ -24,7 +24,7 @@ const onShowIndex = function () {
 }
 
 const showUpdateForm = function (event) {
-  $('#hideme').show()
+  // $('#hideme').show()
 }
 module.exports = {
   createUploadMultiPart,
