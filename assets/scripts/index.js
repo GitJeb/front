@@ -5,6 +5,7 @@ const config = require('./config')
 const events = require('./auth/events')
 const uploadEvents = require('./uploads/events')
 const uploadUi = require('./uploads/ui')
+const uploadApi = require('./uploads/api')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -24,9 +25,24 @@ $(() => {
   $('#multipart-form-data').on('submit', uploadEvents.createUploadMultiPart)
   $('.pageShowz').on('click', uploadEvents.pageShowIndex)
   $('.showIndex').on('click', uploadEvents.onShowIndex)
-  $('.update-upload').on('submit', uploadUi.onUpdate)
-  $('.delete-upload').on('click', uploadUi.onDelete)
-  $('.update-form-button').on('click', uploadUi.showUpdateForm)
+
+  const showUpdateForm = function (event) {
+    $(this).siblings().removeClass('hidden')
+  }
+
+  const onUpdate = function (event) {
+    // event.preventDefault()
+    // const itemId = $(event.target).attr('data-id')
+    const itemData = new FormData(this.siblings())
+    console.log(itemData)
+    uploadApi.updateUpload(itemData)
+      .then(uploadUi.updateUploadSuccess)
+      .catch(uploadUi.updateUploadFail)
+  }
+
+  $('#photo-grid').on('click', '.delete-upload', uploadUi.onDelete)
+  $('#photo-grid').on('click', '.update-form-button', showUpdateForm)
+  $('#photo-grid').on('submit', '.update-upload', onUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file
