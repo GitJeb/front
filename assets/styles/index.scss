@@ -17,15 +17,47 @@ p {
   float: left;
 }
 
+// picture in indexAll buttons
 #picz {
   height: 150px;
+  display: block;
+  margin: auto;
+}
+
+// show pics no buttons
+#pict {
+  height: 150px;
+  display: block;
+  margin: auto;
+}
+
+.update-upload {
+  float: left;
+}
+
+.pic-title {
+  text-align: center;
+}
+
+.pic-date {
+  text-align: center;
 }
 
 .pic-display {
+  display: block;
+  margin: auto;
   text-align: center;
-  display: inline-block;
 }
 
+.thumbnail {
+  border: 3px solid gray;
+  padding: 3px;
+  width: 300px,
+}
+
+.clearfix {
+  clear: both;
+}
 
 .upload {
     height: 100px;
