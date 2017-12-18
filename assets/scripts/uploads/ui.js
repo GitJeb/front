@@ -2,13 +2,9 @@
 
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
-<<<<<<< HEAD
 const pageShow = require('../templates/pageShow.handlebars')
-const store = require('../store')
-=======
 // const getFormFields = require('../../../lib/get-form-fields')
 // const store = require('../store')
->>>>>>> Continuing to struggle with update
 
 
 const success = function () {
@@ -20,19 +16,19 @@ const error = function (error) {
   console.log('error is:', error)
 }
 
-const showUpdateForm = function () {
-  $('.update-form').removeClass('hidden')
-}
+// const showUpdateForm = function () {
+//   $(this).siblings().removeClass('hidden')
+// }
 
-const onUpdate = function (data) {
-  data.preventDefault()
-  // const itemId = $(event.target).attr('data-id')
-  const itemData = new FormData(event.target)
-  console.log(itemData)
-  uploadApi.updateUpload(itemData)
-    .then(updateUploadSuccess)
-    .catch(updateUploadFail)
-}
+// const onUpdate = function () {
+//   event.preventDefault()
+//   // const itemId = $(event.target).attr('data-id')
+//   const itemData = new FormData(this.siblings())
+//   console.log(itemData)
+//   uploadApi.updateUpload(itemData)
+//     .then(updateUploadSuccess)
+//     .catch(updateUploadFail)
+// }
 
 const onDelete = function (data) {
   const itemId = $(event.target).attr('data-id')
@@ -63,6 +59,13 @@ const indexAllSuccess = function (data) {
   $('.update-upload').on('click', onUpdate)
   $('.delete-upload').on('click', onDelete)
 }
+  // $('#photo-grid').on('submit', '.update-upload', onUpdate)
+  // $('#photo-grid').on('click', '.delete-upload', onDelete)
+  // $('#photo-grid').on('click', '.update-form-button', showUpdateForm)
+  // $('.update-form-button').on('click', showUpdateForm)
+  // $('.update-upload').on('submit', onUpdate)
+  // $('.delete-upload').on('click', onDelete)
+// }
 
 const indexAllFail = function (error) {
   $('#message').html('error')
