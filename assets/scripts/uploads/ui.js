@@ -2,8 +2,13 @@
 
 const uploadApi = require('./api')
 const indexView = require('../templates/ImageIndexAll.handlebars')
+<<<<<<< HEAD
 const pageShow = require('../templates/pageShow.handlebars')
 const store = require('../store')
+=======
+// const getFormFields = require('../../../lib/get-form-fields')
+// const store = require('../store')
+>>>>>>> Continuing to struggle with update
 
 
 const success = function () {
@@ -16,18 +21,11 @@ const error = function (error) {
 }
 
 const showUpdateForm = function () {
-  $('.update-form-button').on('click', () => {
-    $('.update-form').removeClass('hidden')
-  })
+  $('.update-form').removeClass('hidden')
 }
 
-const updateActions = function () {
-  $('.update-upload').on('submit', onUpdate)
-  $('.delete-upload').on('click', onDelete)
-}
-
-const onUpdate = function (event) {
-  event.preventDefault()
+const onUpdate = function (data) {
+  data.preventDefault()
   // const itemId = $(event.target).attr('data-id')
   const itemData = new FormData(event.target)
   console.log(itemData)
