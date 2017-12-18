@@ -15,6 +15,8 @@ const createUploadMultiPart = function (event) {
     .then(uploadUi.success)
     .then(onShowGallery)
     .catch(uploadUi.error)
+  this.reset()
+  return false
 }
 
 // Show all images uploaded
