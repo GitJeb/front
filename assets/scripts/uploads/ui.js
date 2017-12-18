@@ -20,7 +20,6 @@ const error = function (error) {
 const onUpdate = function (event) {
   event.preventDefault()
   const itemId = $(event.target).attr('data-id')
-  console.log(itemId)
   const data = getFormFields(event.target)
   uploadApi.updateUpload(itemId, data)
     .then(updateUploadSuccess)
@@ -56,13 +55,6 @@ const indexAllSuccess = function (data) {
   $('.update-upload').on('click', onUpdate)
   $('.delete-upload').on('click', onDelete)
 }
-  // $('#photo-grid').on('submit', '.update-upload', onUpdate)
-  // $('#photo-grid').on('click', '.delete-upload', onDelete)
-  // $('#photo-grid').on('click', '.update-form-button', showUpdateForm)
-  // $('.update-form-button').on('click', showUpdateForm)
-  // $('.update-upload').on('submit', onUpdate)
-  // $('.delete-upload').on('click', onDelete)
-// }
 
 const indexAllFail = function (error) {
   $('#message').html('error')
@@ -117,5 +109,7 @@ module.exports = {
   updateUploadSuccess,
   updateUploadFail,
   ShowGallerySuccess,
-  ShowGalleryFail
+  ShowGalleryFail,
+  onDelete,
+  onUpdate
 }
