@@ -36,7 +36,6 @@ const deleteUpload = function (id) {
 }
 
 const updateUpload = function (id, data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/uploads/' + id,
     method: 'PATCH',
