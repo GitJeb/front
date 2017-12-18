@@ -45,6 +45,7 @@ p {
   display: block;
   margin: auto;
   text-align: center;
+  overflow: hidden;
 }
 
 .thumbnail {
@@ -106,7 +107,6 @@ section {
 
 #footer {
     height: 40px;
-    width: 1000px;
     background: #33FF66;
     clear: both;
 }
