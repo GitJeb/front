@@ -5,6 +5,7 @@ const indexView = require('../templates/ImageIndexAll.handlebars')
 const pageShow = require('../templates/pageShow.handlebars')
 const store = require('../store')
 
+
 const success = function () {
   $('#message').html('File uploaded successfully!')
 }
@@ -45,6 +46,11 @@ const indexAllFail = function (error) {
 const deleteUploadSuccess = function (data) {
   console.log('success data is:', data)
   $('#message').html('upload successfully deleted!')
+
+  // Refresh My Uploads Page
+  uploadApi.indexAll()
+    .then(indexAllSuccess)
+    .catch(indexAllFail)
 }
 
 const deleteUploadFail = function (error) {

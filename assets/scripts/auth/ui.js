@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const uploadEvents = require('../uploads/events')
 
 const clearForms = function () {
   $('input').val('')
@@ -60,6 +61,10 @@ const signInSuccess = function (data) {
   $('.username').html('')
   $('.username').prepend('signed in as: ' + store.user.email)
   $('#sign-in').addClass('hidden')
+  $('.showIndex').removeClass('hidden')
+
+  // Shows Main Gallery on Sign in
+  uploadEvents.onShowGallery()
 }
 
 const signInFail = function () {
@@ -71,8 +76,12 @@ const signOutSuccess = function (data) {
   clearForms()
   $('#sign-in').removeClass('hidden')
   $('.auth-menu').addClass('hidden')
+  $('form').hide()
+  $('.showIndex').addClass('hidden')
   store.user = false
-  showModal('sign-in')
+
+  // Shows Main Gallery on Sign in
+  uploadEvents.onShowGallery()
 }
 
 const signOutFail = function () {
