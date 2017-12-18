@@ -6,9 +6,8 @@ const pageShow = require('../templates/pageShow.handlebars')
 const store = require('../store')
 
 
-const success = function (data) {
-  console.log('success data is:', data)
-  $('#message').html('success!')
+const success = function () {
+  $('#message').html('File uploaded successfully!')
 }
 
 const error = function (error) {
@@ -77,7 +76,6 @@ const ShowGallerySuccess = function (data) {
 const ShowGalleryFail = function () {
   $('#message').html('error')
 }
-
 
 const activateLink = function (target) {
   $('li').removeClass('active')
