@@ -28,6 +28,7 @@ body {
   background: $green;
   clear: both;
   height: 40px;
+  text-align: center;
 }
 
 #main {
@@ -38,7 +39,10 @@ body {
 }
 
 #message {
+  color: $reds;
   float: right;
+  font-size: 15px;
+  font-weight: 20px;
 }
 
 .photo-grid {
