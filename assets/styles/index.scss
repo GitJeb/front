@@ -6,11 +6,16 @@ $gray: #d3d3d3;
 $white: #fff;
 $reds: #ff0000;
 $green: #33ff66;
+$yellow: #FFF700;
 
 
 .navbar-right {
   margin-right: 1px;
   padding-right: 10px;
+}
+
+.navbar-default {
+  background-color: $yellow;
 }
 
 body {
@@ -78,6 +83,10 @@ p {
   text-align: left;
   color: white;
   background: rgba(0, 0, 0 , .41);
+
+  > p {
+    padding: 0;
+  }
 }
 
 .pic-date {
@@ -98,7 +107,7 @@ p {
     width: 49%;
   }
   > form {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -123,7 +132,6 @@ p {
   > .pic-upload-button {
     float: left;
   }
-
 }
 
 
@@ -145,9 +153,10 @@ section {
   float: left;
 }
 
-.update-upload {
-  float: left;
-}
+// .update-upload {
+//   float: left;
+// }
+
 
 .upload-form {
   padding-left:  100px;
@@ -157,4 +166,7 @@ section {
   display: inline-block;
   padding-left: 200px;
   padding-top: 18px;
+  > fieldset > input {
+    display: inline;
+  }
 }

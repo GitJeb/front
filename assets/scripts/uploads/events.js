@@ -1,6 +1,6 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields')
+// const getFormFields = require('../../../lib/get-form-fields')
 
 const uploadApi = require('./api')
 const uploadUi = require('./ui')

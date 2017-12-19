@@ -57,6 +57,10 @@ const deleteUploadFail = function () {
 
 const updateUploadSuccess = function (data) {
   $('#message').html('upload successfully updated!')
+  // Refresh My Uploads Page
+  uploadApi.indexAll()
+    .then(indexAllSuccess)
+    .catch(indexAllFail)
 }
 
 const updateUploadFail = function () {

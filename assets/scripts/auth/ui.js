@@ -31,7 +31,7 @@ const showModal = function (buttonId) {
   // Make sure error div is hidden
   $('.formerror-auth').addClass('hidden')
   // Hides all forms in modal
-  $('form').hide()
+  $('.modal-body form').hide()
   // Set Modal title
   $('.modal-title-auth').html(formtitle[buttonId])
   // Show form within modal
@@ -79,7 +79,7 @@ const signOutSuccess = function (data) {
   $('form').hide()
   $('.showIndex').addClass('hidden')
   store.user = false
-
+  $('#message').html('Signed Out Successfully')
   // Shows Main Gallery on Sign in
   uploadEvents.onShowGallery()
 }
