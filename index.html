@@ -23,7 +23,7 @@
 
     <!-- logo -->
     <div class="logo">
-      <a href="https://gitjeb.github.io/front/"><img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px></a>
+      <a href="#"><img src="https://i.imgur.com/lonae7n.jpg" alt="" height=75px></a>
       <p id="message">Welcome to JEB!</p>
     </div>
 
@@ -70,7 +70,6 @@
             <div class='formerror formerror-auth alert alert-danger' role="alert"></div>
 
           </div>
-
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
           </div>
@@ -111,9 +110,10 @@
           <!-- user upload picture section -->
           <form id="multipart-form-data" class="uploadhere" enctype="multipart/form-data">
             <fieldset>
-              <label>Title<input type="text" name="image[title]"></label>
-              <label><input type="file" name="image[file]"></label>
-              <button class="btn btn-default" type="submit" name="submit">Upload</button>
+              <label>Title</label>
+                <input type="text" name="image[title]">
+                <input type="file" name="image[file]">
+                <button type="submit" class='btn btn-primary' name="submit">Upload</button>
             </fieldset>
           </form>
         </div>
@@ -125,12 +125,19 @@
   <!-- main section -->
   <div id="main">
     <div id="photo-grid"></div>
+<!-- <div class="showzAll">
+      <button class="btn btn-primary showIndex">SHOW ALL</button>
+    </div>
+    <div class="showzAll">
+      <button class="btn btn-primary pageShowz">SHOW ALL</button>
+    </div> -->
+    <!-- <div id="page-show"></div> -->
   </div>
 
 
   <!-- footer -->
   <div id="footer">
-    <p>JEB! 2017 - The most basic file-bucket on earth!!!</p>
+    <p>This is the Footer</p>
   </div>
 
 </body>

@@ -12,7 +12,7 @@
                         <div class="pic-display">
                           {{#fileType upload}} {{/fileType}}
                           <div class='info-overlay clearfix'>
-                                {{upload.title}} by: {{upload._owner.email}}
+                                <b>{{upload.title}}</b> by: {{upload._owner.email}} </br>
                                 created: {{#formatDate upload.updatedAt}}{{/formatDate}}
                           </div>
                         </div>
