@@ -8,6 +8,9 @@
                         <!-- pic display -->
                         <div class="pic-display">
                               {{#fileType upload}} {{/fileType}}
+                              <div class='info-overlay'>
+                                {{upload.title}} by: {{upload._owner.email}}
+                              </div>
                         </div>
                     </div>
                 </div>
