@@ -6,11 +6,16 @@ $gray: #d3d3d3;
 $white: #fff;
 $reds: #ff0000;
 $green: #33ff66;
+$yellow: #FFF700;
 
 
 .navbar-right {
   margin-right: 1px;
   padding-right: 10px;
+}
+
+.navbar-default {
+  background-color: $yellow;
 }
 
 body {
@@ -123,7 +128,6 @@ p {
   > .pic-upload-button {
     float: left;
   }
-
 }
 
 
@@ -145,9 +149,10 @@ section {
   float: left;
 }
 
-.update-upload {
-  float: left;
-}
+// .update-upload {
+//   float: left;
+// }
+
 
 .upload-form {
   padding-left:  100px;
