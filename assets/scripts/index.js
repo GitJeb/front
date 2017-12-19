@@ -31,7 +31,8 @@ $(() => {
   $('.showIndex').on('click', uploadEvents.onShowIndex)
 
   const showUpdateForm = function (event) {
-    $(this).siblings().removeClass('hidden')
+    $(this).siblings().toggleClass('hidden')
+    $('input').val('')
   }
 
   $('#photo-grid').on('click', '.delete-upload', uploadUi.onDelete)
