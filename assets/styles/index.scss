@@ -83,6 +83,10 @@ p {
   text-align: left;
   color: white;
   background: rgba(0, 0, 0 , .41);
+
+  > p {
+    padding: 0;
+  }
 }
 
 .pic-date {
@@ -103,7 +107,7 @@ p {
     width: 49%;
   }
   > form {
-    text-align: left;
+    text-align: center;
   }
 }
 
@@ -162,4 +166,7 @@ section {
   display: inline-block;
   padding-left: 200px;
   padding-top: 18px;
+  > fieldset > input {
+    display: inline;
+  }
 }
