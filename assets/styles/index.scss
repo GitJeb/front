@@ -85,10 +85,21 @@ p {
 }
 
 .pic-display {
+  position: relative;
   display: block;
   margin: auto;
   overflow: hidden;
   text-align: center;
+}
+
+.upload-actions {
+  text-align: center;
+  > button {
+    width: 49%;
+  }
+  > form {
+    text-align: left;
+  }
 }
 
 .thumbnail {
@@ -97,7 +108,25 @@ p {
   padding: 0;
   width: 350px;
   margin: 10px 0 10px 0;
+
+  > .upload-action {
+    width: 50%;
+    > button {
+      width: 100%;
+    }
+  }
+
+  > .pic-del-button {
+    float: right;
+  }
+
+  > .pic-upload-button {
+    float: left;
+  }
+
 }
+
+
 
 .upload {
     height: 100px;
