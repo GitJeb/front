@@ -38,13 +38,11 @@ const indexAllSuccess = function (data) {
   activateLink('.showIndex')
 }
 
-const indexAllFail = function (error) {
-  $('#message').html('error')
-  console.log('indexAll error:', error)
+const indexAllFail = function () {
+  $('#message').html('Gallery Error!')
 }
 
-const deleteUploadSuccess = function (data) {
-  console.log('success data is:', data)
+const deleteUploadSuccess = function () {
   $('#message').html('upload successfully deleted!')
 
   // Refresh My Uploads Page
@@ -53,18 +51,16 @@ const deleteUploadSuccess = function (data) {
     .catch(indexAllFail)
 }
 
-const deleteUploadFail = function (error) {
-  $('#message').html('error on delete')
-  console.log('upload delete error:', error)
+const deleteUploadFail = function () {
+  $('#message').html('Error on delete')
 }
 
 const updateUploadSuccess = function (data) {
   $('#message').html('upload successfully updated!')
 }
 
-const updateUploadFail = function (error) {
-  $('#message').html('error on update')
-  console.log('upload update error:', error)
+const updateUploadFail = function () {
+  $('#message').html('Error on update')
 }
 
 const ShowGallerySuccess = function (data) {

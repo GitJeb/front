@@ -12,7 +12,6 @@ const onModal = (event) => {
 // Register
 const onRegistration = function (event) {
   event.preventDefault()
-  console.log('hey i work')
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
