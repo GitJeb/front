@@ -58,12 +58,7 @@ p {
 .picz {
   height: 250px;
   display: block;
-  height: 150px;
   margin: auto;
-}
-
-.update-upload {
-  float: left;
 }
 
 .pic-title {
@@ -94,14 +89,10 @@ p {
 
 .thumbnail {
   position: relative;
-  border: 3px solid gray;
+  border: 3px solid $gray;
   padding: 0;
-  width: 300px;
-  margin: 0;
-}
-
-.clearfix {
-  clear: both;
+  width: 350px;
+  margin: 10px 0 10px 0;
 }
 
 .upload {
@@ -109,11 +100,6 @@ p {
     width: 100%;
     background: #00EEFF;
 }
-
-.pic-title {
-  text-align: center;
-}
-
 
 section {
   background: $white;
@@ -126,19 +112,8 @@ section {
   float: left;
 }
 
-.thumbnail {
-  border: 3px solid $gray;
-  padding: 3px;
-  width: 300px;
-}
-
 .update-upload {
   float: left;
-}
-
-.upload {
-  height: 100px;
-  width: 100%;
 }
 
 .upload-form {
