@@ -6,11 +6,16 @@ $gray: #d3d3d3;
 $white: #fff;
 $reds: #ff0000;
 $green: #33ff66;
+$yellow: #FFF700;
 
 
 .navbar-right {
   margin-right: 1px;
   padding-right: 10px;
+}
+
+.navbar-default {
+  background-color: $yellow;
 }
 
 body {
@@ -28,6 +33,7 @@ body {
   background: $green;
   clear: both;
   height: 40px;
+  text-align: center;
 }
 
 #main {
@@ -38,7 +44,10 @@ body {
 }
 
 #message {
+  color: $reds;
   float: right;
+  font-size: 15px;
+  font-weight: 20px;
 }
 
 .photo-grid {
@@ -56,9 +65,24 @@ p {
 
 // picture in indexAll buttons
 .picz {
+  height: 250px;
   display: block;
-  height: 150px;
   margin: auto;
+}
+
+.pic-title {
+  text-align: center;
+}
+
+.info-overlay {
+  padding: 3px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 20%;
+  text-align: left;
+  color: white;
+  background: rgba(0, 0, 0 , .41);
 }
 
 .pic-date {
@@ -66,17 +90,53 @@ p {
 }
 
 .pic-display {
+  position: relative;
   display: block;
   margin: auto;
   overflow: hidden;
   text-align: center;
 }
 
-
-.pic-title {
+.upload-actions {
   text-align: center;
+  > button {
+    width: 49%;
+  }
+  > form {
+    text-align: left;
+  }
 }
 
+.thumbnail {
+  position: relative;
+  border: 3px solid $gray;
+  padding: 0;
+  width: 350px;
+  margin: 10px 0 10px 0;
+
+  > .upload-action {
+    width: 50%;
+    > button {
+      width: 100%;
+    }
+  }
+
+  > .pic-del-button {
+    float: right;
+  }
+
+  > .pic-upload-button {
+    float: left;
+  }
+}
+
+
+
+.upload {
+    height: 100px;
+    width: 100%;
+    background: #00EEFF;
+}
 
 section {
   background: $white;
@@ -89,20 +149,10 @@ section {
   float: left;
 }
 
-.thumbnail {
-  border: 3px solid $gray;
-  padding: 3px;
-  width: 300px;
-}
+// .update-upload {
+//   float: left;
+// }
 
-.update-upload {
-  float: left;
-}
-
-.upload {
-  height: 100px;
-  width: 100%;
-}
 
 .upload-form {
   padding-left:  100px;
