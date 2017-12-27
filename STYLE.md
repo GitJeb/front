@@ -11,6 +11,6 @@ wiki features.
 
 ### HTML
 
-Please refrain from using HTML inside markdown files, as a rule. Sometimes,
+Please refrain from using HTML inside markdown files, as a rule. Sometime,
 using HTML is the only way to accomplish something, like including an image with
 a custom width attribute.

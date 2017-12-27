@@ -4,6 +4,7 @@
       "blockquote-indentation": "2",
       "checkbox-character-style": {
         "checked": "x",
+        "maximum-line-length": 99999,
         "unchecked": " "
       },
       "code-block-style": "fenced",
