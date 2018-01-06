@@ -29,6 +29,7 @@ const showModal = function (buttonId) {
     'change-password': 'Change Password'
   }
   // Make sure error div is hidden
+  console.log('hello')
   $('.formerror-auth').addClass('hidden')
   // Hides all forms in modal
   $('.modal-body form').hide()
