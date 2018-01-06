@@ -19,21 +19,24 @@ const showError = function (msg) {
 
 // Auth Modal Controls
 const showModal = function (buttonId) {
-  // Class of forms map to id of buttons to disiplay them.
-  // TargetForm turns ID into class.
-  const targetForm = $('.' + buttonId)
-  // Map button id to Form titles
-  const formtitle = {
-    'registration': 'Sign Up',
-    'sign-in': 'Sign In',
-    'change-password': 'Change Password'
+
+// map id of button to form and form title
+  const buttonRoute = {
+    'registration': {title: 'Sign Up', formClass: '.registration'},
+    'sign-in': {title: 'Sign In', formClass: '.sign-in'},
+    'back-to-sign-in': {title: 'Sign In', formClass: '.sign-in'},
+    'change-password': {title: 'Change Password', formClass: '.change-password'}
   }
+
+  // TargetForm turns ID into class.
+  const targetForm = $(buttonRoute[buttonId].formClass)
+
   // Make sure error div is hidden
   $('.formerror-auth').addClass('hidden')
   // Hides all forms in modal
   $('.modal-body form').hide()
   // Set Modal title
-  $('.modal-title-auth').html(formtitle[buttonId])
+  $('.modal-title-auth').html(buttonRoute[buttonId].title)
   // Show form within modal
   targetForm.show()
   // Show modal
